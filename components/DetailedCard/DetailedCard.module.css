@@ -3,7 +3,18 @@
     flex-direction: column;
     border: 1px solid black;
     border-radius: 4px;
-    padding: 4px;
+    padding: 4px 8px;
     gap: 4px;
     align-items: center;
+    width: 500px;
+}
+
+.slider {
+    width: 100%;
+    padding: 16px;
+
+}
+
+.img {
+    margin: 0 auto;
 }

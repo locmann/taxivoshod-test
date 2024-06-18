@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import styles from './Pagination.module.css';
 const Pagination = () => {
   const { totalPages, currentPage, setCurrentPage } = useAppContext();
-  // const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -24,7 +23,7 @@ const Pagination = () => {
     const params = new URLSearchParams(searchParams);
     params.set('page', currentPage.toString());
     replace(`${pathname}?${params.toString()}`);
-  }, [currentPage]);
+  }, [currentPage, pathname, replace, searchParams]);
 
   return (
     <div className={styles.pagination}>
@@ -32,7 +31,7 @@ const Pagination = () => {
         disabled={currentPage === 1}
         onClick={() => handleClick(-1)}
       >
-        prev page
+        ←
       </button>
 
       <div>
@@ -43,7 +42,7 @@ const Pagination = () => {
         disabled={currentPage === totalPages}
         onClick={() => handleClick(1)}
       >
-        next page
+        →
       </button>
     </div>
   );
