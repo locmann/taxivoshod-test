@@ -1,4 +1,4 @@
-import { CarResponse, Root } from '@/types/types';
+import { CarResponse, Filters, Root } from '@/types/types';
 
 export const getProducts = async (page: number): Promise<Root> => {
   const response = await fetch(`https://test.taxivoshod.ru/api/test/?w=catalog-cars&page=${page}`);
@@ -9,6 +9,13 @@ export const getProducts = async (page: number): Promise<Root> => {
 
 export const getProduct = async (id: string): Promise<CarResponse> => {
   const response = await fetch(`https://test.taxivoshod.ru/api/test/?w=catalog-car&id=${id}`);
+  if (!response.ok) throw new Error('Unable to fetch products.');
+
+  return response.json();
+};
+
+export const getFilters = async (): Promise<Filters> => {
+  const response = await fetch('https://test.taxivoshod.ru/api/test/?w=catalog-filter');
   if (!response.ok) throw new Error('Unable to fetch products.');
 
   return response.json();

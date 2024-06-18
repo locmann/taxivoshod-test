@@ -1,0 +1,11 @@
+
+.filter {
+    display: flex;
+    gap: 8px;
+    padding: 16px;
+}
+
+.section {
+    display: flex;
+    gap: 4px;
+}

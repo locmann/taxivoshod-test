@@ -37,3 +37,40 @@ export interface ContextType {
   totalPages: number;
   setTotalPages: Dispatch<SetStateAction<number>>;
 }
+
+export interface Filters {
+  result: number;
+  brands: Brands;
+  models: Models;
+  tarif: Tarif;
+}
+
+export interface Brands {
+  name: string;
+  code: string;
+  values: string[];
+}
+
+export interface Models {
+  name: string;
+  type: string;
+  values: Value[];
+}
+
+export interface Value {
+  brand: string;
+  models: string[];
+}
+
+export interface Tarif {
+  name: string;
+  type: string;
+  values: Values;
+}
+
+export interface Values {
+  '13': string;
+  '14': string;
+  '22': string;
+  '26': string;
+}
