@@ -9,13 +9,9 @@ const Pagination = () => {
   const pathname = usePathname();
   const { replace } = useRouter();
   const handleClick = (i: number) => {
-    console.log(currentPage);
     setCurrentPage(currentPage + i);
-    console.log(currentPage);
     const params = new URLSearchParams(searchParams);
-    console.log(params);
     params.set('page', currentPage.toString());
-    console.log(params);
     replace(`${pathname}?${params.toString()}`);
   };
 
