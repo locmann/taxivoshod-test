@@ -36,6 +36,8 @@ export interface ContextType {
   setCurrentPage: Dispatch<SetStateAction<number>>;
   totalPages: number;
   setTotalPages: Dispatch<SetStateAction<number>>;
+  filter: ContextFilter;
+  setFilter: Dispatch<SetStateAction<ContextFilter>>;
 }
 
 export interface Filters {
@@ -73,4 +75,10 @@ export interface Values {
   '14': string;
   '22': string;
   '26': string;
+}
+
+export interface ContextFilter {
+  brand: string[];
+  model: string[];
+  tarif: string[];
 }

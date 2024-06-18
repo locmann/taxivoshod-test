@@ -9,3 +9,20 @@
     display: flex;
     gap: 4px;
 }
+
+.added {
+    display: flex;
+    gap: 4px;
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.tags {
+    display: flex;
+    gap: 4px;
+}
+
+.tag {
+    display: flex;
+    gap: 4px;
+}

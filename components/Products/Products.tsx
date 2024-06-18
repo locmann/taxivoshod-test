@@ -6,14 +6,14 @@ import { useAppContext } from '@/context/context';
 import CarCard from '@/components/CarCard/CarCard';
 import styles from './Products.module.css';
 const Products = () => {
-  const { currentPage, setTotalPages } = useAppContext();
+  const { currentPage, setTotalPages, filter } = useAppContext();
   const [products, setProducts] = useState<Root>();
   useEffect(() => {
-    getProducts(currentPage).then((res) => {
+    getProducts(currentPage, filter).then((res) => {
       setProducts(res);
       setTotalPages(res.pages);
     });
-  }, [currentPage]);
+  }, [currentPage, filter]);
 
   return (
     <div className={styles.wrapper}>
